@@ -1,4 +1,7 @@
 # NeuralPower
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 NeuralPower provide a systematic modeling and prediction method for power, runtime, and energy consumptions in running deep neural networks (DNNs) on target devices, including GPUs. It helps the DNN designers to get a detailed breakdown of the runtime, energy consumptions for a given DNN on a target device.
 The main contributions are:
  * NeuralPower is the first to apply learning-based models to predict runtime, power, and energy consumption for CNNs;
