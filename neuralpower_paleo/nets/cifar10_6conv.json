@@ -1,0 +1,111 @@
+{
+    "name": "Cifar10 AlexNet",
+    "layers": {
+        "data": {
+            "parents": [],
+            "type": "Input",
+            "tensor": [128, 32, 32, 3]
+        },
+        "conv1": {
+            "parents": ["data"],
+            "type": "Convolution",
+            "filter": [3, 3, 3, 128],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "conv2": {
+            "parents": ["conv1"],
+            "type": "Convolution",
+            "filter": [3, 3, 128, 128],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "pool2": {
+            "parents": ["conv2"],
+            "type": "Pooling",
+            "ksize": [1, 2, 2, 1],
+            "strides": [1, 2, 2, 1],
+            "padding": "VALID"
+        },
+        "conv3": {
+            "parents": ["pool2"],
+            "type": "Convolution",
+            "filter": [3, 3, 128, 256],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "conv4": {
+            "parents": ["conv3"],
+            "type": "Convolution",
+            "filter": [3, 3, 256, 256],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "pool4": {
+            "parents": ["conv4"],
+            "type": "Pooling",
+            "ksize": [1, 2, 2, 1],
+            "strides": [1, 2, 2, 1],
+            "padding": "VALID"
+        },
+        "conv5": {
+            "parents": ["pool4"],
+            "type": "Convolution",
+            "filter": [3, 3, 256, 512],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "conv6": {
+            "parents": ["conv5"],
+            "type": "Convolution",
+            "filter": [3, 3, 512, 512],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "fc7": {
+            "parents": ["conv6"],
+            "type": "Convolution",
+            "filter": [8, 8, 512, 1024],
+            "padding": "VALID",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "dropout7": {
+            "parents": ["fc7"],
+            "type": "Dropout",
+            "dropout_keep_prob": 0.5
+        },
+        "fc8": {
+            "parents": ["dropout7"],
+            "type": "Convolution",
+            "filter": [1, 1, 1024, 1024],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": "relu"
+        },
+        "dropout8": {
+            "parents": ["fc8"],
+            "type": "Dropout",
+            "dropout_keep_prob": 0.5
+        },
+        "fc9": {
+            "parents": ["dropout8"],
+            "type": "Convolution",
+            "filter": [1, 1, 1024, 10],
+            "padding": "SAME",
+            "strides": [1, 1, 1, 1],
+            "activation_fn": null
+        },
+        "softmax": {
+            "parents": ["fc9"],
+            "type": "Softmax",
+            "num_classes": 10
+        }
+    }
+}

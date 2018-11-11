@@ -1,0 +1,414 @@
+{
+    "layers": {
+        "conv1_1": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv1_2": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv1_1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2_1": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2_2": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv2_1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv3_1": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv3_2": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv3_1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv3_3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv3_2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv3_4": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv3_3"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv4_1": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool3"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv4_2": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv4_1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv4_3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv4_2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv4_4": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv4_3"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv5_1": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool4"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv5_2": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv5_1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv5_3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv5_2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv5_4": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv5_3"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "data": {
+            "parents": [], 
+            "tensor": [
+                64, 
+                224, 
+                224, 
+                3
+            ], 
+            "type": "Input"
+        }, 
+        "pool1": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv1_2"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool2": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv2_2"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool3": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv3_4"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool4": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv4_4"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool5": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv5_4"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }
+    }, 
+    "name": "VGG_ILSVRC_19_layer"
+}

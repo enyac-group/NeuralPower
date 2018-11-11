@@ -1,0 +1,1486 @@
+{
+    "layers": {
+        "conv1/7x7_s2": {
+            "filter": [
+                7, 
+                7, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                192
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "conv2/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool1/norm1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2/norm2": {
+            "parents": [
+                "conv2/3x3"
+            ], 
+            "type": "LRN"
+        }, 
+        "data": {
+            "parents": [], 
+            "tensor": [
+                160, 
+                224, 
+                224, 
+                3
+            ], 
+            "type": "Input"
+        }, 
+        "inception_3a/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool2/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3a/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_3a/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3a/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                96
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool2/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3a/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                32
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_3a/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3a/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                16
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool2/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3a/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_3a/1x1", 
+                "inception_3a/3x3", 
+                "inception_3a/5x5", 
+                "inception_3a/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_3a/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool2/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_3a/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                32
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_3a/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3b/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_3a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3b/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                192
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_3b/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3b/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_3a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3b/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                96
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_3b/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3b/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                32
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_3a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_3b/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_3b/1x1", 
+                "inception_3b/3x3", 
+                "inception_3b/5x5", 
+                "inception_3b/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_3b/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_3a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_3b/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_3b/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4a/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                192
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool3/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4a/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                208
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4a/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4a/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                96
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool3/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4a/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                48
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4a/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4a/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                16
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool3/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4a/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_4a/1x1", 
+                "inception_4a/3x3", 
+                "inception_4a/5x5", 
+                "inception_4a/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_4a/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool3/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_4a/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4a/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4b/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                160
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4b/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                224
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4b/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4b/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                112
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4b/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4b/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4b/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                24
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4b/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_4b/1x1", 
+                "inception_4b/3x3", 
+                "inception_4b/5x5", 
+                "inception_4b/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_4b/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_4b/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4b/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4c/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4b/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4c/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4c/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4c/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4b/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4c/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4c/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4c/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                24
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4b/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4c/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_4c/1x1", 
+                "inception_4c/3x3", 
+                "inception_4c/5x5", 
+                "inception_4c/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_4c/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4b/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_4c/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4c/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4d/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                112
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4c/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4d/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                288
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4d/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4d/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                144
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4c/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4d/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4d/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4d/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                32
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4c/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4d/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_4d/1x1", 
+                "inception_4d/3x3", 
+                "inception_4d/5x5", 
+                "inception_4d/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_4d/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4c/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_4d/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4d/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4e/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4d/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4e/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                320
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4e/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4e/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                160
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4d/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4e/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4e/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4e/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                32
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4d/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_4e/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_4e/1x1", 
+                "inception_4e/3x3", 
+                "inception_4e/5x5", 
+                "inception_4e/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_4e/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_4d/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_4e/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4e/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5a/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool4/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5a/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                320
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_5a/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5a/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                160
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool4/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5a/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_5a/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5a/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                32
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool4/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5a/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_5a/1x1", 
+                "inception_5a/3x3", 
+                "inception_5a/5x5", 
+                "inception_5a/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_5a/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "pool4/3x3_s2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_5a/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_5a/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5b/1x1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                384
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_5a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5b/3x3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                384
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_5b/3x3_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5b/3x3_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                192
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_5a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5b/5x5": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_5b/5x5_reduce"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5b/5x5_reduce": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                48
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_5a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "inception_5b/output": {
+            "dim": 3, 
+            "parents": [
+                "inception_5b/1x1", 
+                "inception_5b/3x3", 
+                "inception_5b/5x5", 
+                "inception_5b/pool_proj"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "inception_5b/pool": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "inception_5a/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "inception_5b/pool_proj": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_5b/pool"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "loss3/classifier": {
+            "num_outputs": 1000, 
+            "parents": [
+                "pool5/7x7_s1"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "pool1/3x3_s2": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv1/7x7_s2"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool1/norm1": {
+            "parents": [
+                "pool1/3x3_s2"
+            ], 
+            "type": "LRN"
+        }, 
+        "pool2/3x3_s2": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv2/norm2"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool3/3x3_s2": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_3b/output"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool4/3x3_s2": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_4e/output"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool5/7x7_s1": {
+            "ksize": [
+                1, 
+                7, 
+                7, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "inception_5b/output"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool5/drop_7x7_s1": {
+            "dropout_keep_prob": 0.4, 
+            "parents": [
+                "pool5/7x7_s1"
+            ], 
+            "type": "Dropout"
+        }, 
+        "prob": {
+            "parents": [
+                "loss3/classifier"
+            ], 
+            "type": "Softmax"
+        }
+    }, 
+    "name": "GoogleNet"
+}

@@ -1,0 +1,194 @@
+{
+    "layers": {
+        "conv1": {
+            "filter": [
+                2, 
+                2, 
+                -1, 
+                54
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2": {
+            "filter": [
+                2, 
+                2, 
+                -1, 
+                54
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv3": {
+            "filter": [
+                2, 
+                2, 
+                -1, 
+                51
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv4": {
+            "filter": [
+                2, 
+                2, 
+                -1, 
+                41
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool3"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "data": {
+            "parents": [], 
+            "tensor": [
+                200, 
+                32, 
+                32, 
+                3
+            ], 
+            "type": "Input"
+        }, 
+        "ip1": {
+            "num_outputs": 280, 
+            "parents": [
+                "pool4"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "ip2": {
+            "num_outputs": 406, 
+            "parents": [
+                "ip1"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "ip3": {
+            "num_outputs": 10, 
+            "parents": [
+                "ip2"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "loss": {
+            "parents": [
+                "ip3"
+            ], 
+            "type": "Softmax"
+        }, 
+        "pool1": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv1"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool2": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool3": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv3"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool4": {
+            "ksize": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv4"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }
+    }, 
+    "name": "CIFAR10_full"
+}

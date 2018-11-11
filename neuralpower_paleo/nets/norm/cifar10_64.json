@@ -1,0 +1,154 @@
+{
+    "layers": {
+        "conv1": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                32
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                32
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "norm1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv3": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "norm2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "data": {
+            "parents": [], 
+            "tensor": [
+                64, 
+                32, 
+                32, 
+                3
+            ], 
+            "type": "Input"
+        }, 
+        "ip1": {
+            "num_outputs": 10, 
+            "parents": [
+                "pool3"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "loss": {
+            "parents": [
+                "ip1"
+            ], 
+            "type": "Softmax"
+        }, 
+        "norm1": {
+            "parents": [
+                "pool1"
+            ], 
+            "type": "LRN"
+        }, 
+        "norm2": {
+            "parents": [
+                "pool2"
+            ], 
+            "type": "LRN"
+        }, 
+        "pool1": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv1"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool2": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv2"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool3": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv3"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }
+    }, 
+    "name": "CIFAR10_full"
+}

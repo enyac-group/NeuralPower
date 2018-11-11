@@ -1,0 +1,2278 @@
+{
+    "layers": {
+        "conv1": {
+            "filter": [
+                7, 
+                7, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "data": {
+            "parents": [], 
+            "tensor": [
+                20, 
+                224, 
+                224, 
+                3
+            ], 
+            "type": "Input"
+        }, 
+        "reshape1": {
+            "output_shape": [-1, -1],
+            "parents": [ "pool5"],
+            "type": "Reshape"
+        },
+        "fc1000": {
+            "num_outputs": 1000, 
+            "parents": [
+                "reshape1"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "pool1": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv1"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool5": {
+            "ksize": [
+                1, 
+                7, 
+                7, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res5c"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "prob": {
+            "parents": [
+                "fc1000"
+            ], 
+            "type": "Softmax"
+        }, 
+        "res2a": {
+            "parents": [
+                "res2a_branch1", 
+                "res2a_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res2a_branch1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2a_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2a_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res2a_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2a_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2a_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2b": {
+            "parents": [
+                "res2a", 
+                "res2b_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res2b_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2b_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res2b_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2b_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2b_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2c": {
+            "parents": [
+                "res2b", 
+                "res2c_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res2c_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                64
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2c_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                64
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res2c_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res2c_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2c_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3a": {
+            "parents": [
+                "res3a_branch1", 
+                "res3a_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res3a_branch1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2c"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3a_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res2c"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3a_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res3a_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3a_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3a_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b1": {
+            "parents": [
+                "res3a", 
+                "res3b1_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res3b1_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b1_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res3b1_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b1_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b1_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b2": {
+            "parents": [
+                "res3b1", 
+                "res3b2_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res3b2_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b2_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res3b2_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b2_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b2_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b3": {
+            "parents": [
+                "res3b2", 
+                "res3b3_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res3b3_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                128
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b3_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                128
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res3b3_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res3b3_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b3_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4a": {
+            "parents": [
+                "res4a_branch1", 
+                "res4a_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4a_branch1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b3"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4a_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res3b3"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4a_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4a_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4a_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4a_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b1": {
+            "parents": [
+                "res4a", 
+                "res4b1_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b10": {
+            "parents": [
+                "res4b9", 
+                "res4b10_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b10_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b9"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b10_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b10_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b10_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b10_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b11": {
+            "parents": [
+                "res4b10", 
+                "res4b11_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b11_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b10"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b11_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b11_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b11_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b11_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b12": {
+            "parents": [
+                "res4b11", 
+                "res4b12_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b12_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b11"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b12_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b12_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b12_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b12_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b13": {
+            "parents": [
+                "res4b12", 
+                "res4b13_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b13_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b12"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b13_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b13_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b13_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b13_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b14": {
+            "parents": [
+                "res4b13", 
+                "res4b14_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b14_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b13"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b14_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b14_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b14_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b14_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b15": {
+            "parents": [
+                "res4b14", 
+                "res4b15_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b15_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b14"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b15_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b15_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b15_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b15_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b16": {
+            "parents": [
+                "res4b15", 
+                "res4b16_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b16_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b15"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b16_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b16_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b16_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b16_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b17": {
+            "parents": [
+                "res4b16", 
+                "res4b17_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b17_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b16"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b17_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b17_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b17_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b17_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b18": {
+            "parents": [
+                "res4b17", 
+                "res4b18_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b18_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b17"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b18_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b18_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b18_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b18_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b19": {
+            "parents": [
+                "res4b18", 
+                "res4b19_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b19_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b18"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b19_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b19_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b19_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b19_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b1_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b1_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b1_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b1_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b1_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b2": {
+            "parents": [
+                "res4b1", 
+                "res4b2_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b20": {
+            "parents": [
+                "res4b19", 
+                "res4b20_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b20_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b19"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b20_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b20_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b20_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b20_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b21": {
+            "parents": [
+                "res4b20", 
+                "res4b21_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b21_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b20"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b21_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b21_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b21_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b21_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b22": {
+            "parents": [
+                "res4b21", 
+                "res4b22_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b22_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b21"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b22_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b22_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b22_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b22_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b2_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b2_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b2_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b2_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b2_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b3": {
+            "parents": [
+                "res4b2", 
+                "res4b3_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b3_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b3_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b3_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b3_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b3_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b4": {
+            "parents": [
+                "res4b3", 
+                "res4b4_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b4_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b3"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b4_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b4_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b4_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b4_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b5": {
+            "parents": [
+                "res4b4", 
+                "res4b5_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b5_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b4"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b5_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b5_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b5_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b5_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b6": {
+            "parents": [
+                "res4b5", 
+                "res4b6_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b6_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b5"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b6_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b6_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b6_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b6_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b7": {
+            "parents": [
+                "res4b6", 
+                "res4b7_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b7_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b6"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b7_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b7_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b7_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b7_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b8": {
+            "parents": [
+                "res4b7", 
+                "res4b8_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b8_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b7"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b8_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b8_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b8_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b8_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b9": {
+            "parents": [
+                "res4b8", 
+                "res4b9_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res4b9_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                256
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b8"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b9_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                256
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res4b9_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res4b9_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                1024
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b9_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5a": {
+            "parents": [
+                "res5a_branch1", 
+                "res5a_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res5a_branch1": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                2048
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b22"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5a_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res4b22"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5a_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res5a_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5a_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                2048
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res5a_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5b": {
+            "parents": [
+                "res5a", 
+                "res5b_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res5b_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res5a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5b_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res5b_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5b_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                2048
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res5b_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5c": {
+            "parents": [
+                "res5b", 
+                "res5c_branch2c"
+            ], 
+            "type": "Elementwise"
+        }, 
+        "res5c_branch2a": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                512
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res5b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5c_branch2b": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                512
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "res5c_branch2a"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "res5c_branch2c": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                2048
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "res5c_branch2b"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }
+    }, 
+    "name": "ResNet-101"
+}

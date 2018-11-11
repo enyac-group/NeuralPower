@@ -1,0 +1,111 @@
+{
+    "layers": {
+        "conv1": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                20
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "conv2": {
+            "filter": [
+                5, 
+                5, 
+                -1, 
+                50
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "pool1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "data": {
+            "parents": [], 
+            "tensor": [
+                128, 
+                28, 
+                28, 
+                1
+            ], 
+            "type": "Input"
+        }, 
+        "ip1": {
+            "num_outputs": 500, 
+            "parents": [
+                "pool2"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "ip2": {
+            "num_outputs": 10, 
+            "parents": [
+                "ip1"
+            ], 
+            "type": "InnerProduct"
+        }, 
+        "loss": {
+            "parents": [
+                "ip2"
+            ], 
+            "type": "Softmax"
+        }, 
+        "pool1": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv1"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "pool2": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "conv2"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }
+    }, 
+    "name": "LeNet"
+}

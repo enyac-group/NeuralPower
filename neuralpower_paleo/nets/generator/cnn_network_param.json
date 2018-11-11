@@ -1,0 +1,42 @@
+{
+    "conv1": {
+        "kernel_size": 1, 
+        "num_output": 57, 
+        "stride": 1
+    }, 
+    "conv2": {
+        "kernel_size": 1, 
+        "num_output": 42, 
+        "stride": 1
+    }, 
+    "conv3": {
+        "kernel_size": 2, 
+        "num_output": 55, 
+        "stride": 1
+    }, 
+    "ip1": {
+        "num_output": 322
+    }, 
+    "max_num_conv_layers": 6, 
+    "max_num_fc_layers": 4, 
+    "num_conv_layers": 3, 
+    "num_fc_layers": 1, 
+    "pool1": {
+        "kernel_size": 2, 
+        "pool": "MAX", 
+        "stride": 2
+    }, 
+    "pool2": {
+        "kernel_size": 1, 
+        "pool": "MAX", 
+        "stride": 2
+    }, 
+    "pool3": {
+        "kernel_size": 1, 
+        "pool": "MAX", 
+        "stride": 1
+    }, 
+    "relu1": {
+        "type": "ReLU"
+    }
+}

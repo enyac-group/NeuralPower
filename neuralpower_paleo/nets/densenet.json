@@ -1,0 +1,1619 @@
+{
+    "layers": {
+        "BatchNorm1": {
+            "parents": [
+                "Convolution1"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm10": {
+            "parents": [
+                "Concat9"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm11": {
+            "parents": [
+                "Concat10"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm12": {
+            "parents": [
+                "Concat11"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm13": {
+            "parents": [
+                "Concat12"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm14": {
+            "parents": [
+                "Pooling1"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm15": {
+            "parents": [
+                "Concat13"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm16": {
+            "parents": [
+                "Concat14"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm17": {
+            "parents": [
+                "Concat15"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm18": {
+            "parents": [
+                "Concat16"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm19": {
+            "parents": [
+                "Concat17"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm2": {
+            "parents": [
+                "Concat1"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm20": {
+            "parents": [
+                "Concat18"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm21": {
+            "parents": [
+                "Concat19"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm22": {
+            "parents": [
+                "Concat20"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm23": {
+            "parents": [
+                "Concat21"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm24": {
+            "parents": [
+                "Concat22"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm25": {
+            "parents": [
+                "Concat23"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm26": {
+            "parents": [
+                "Concat24"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm27": {
+            "parents": [
+                "Pooling2"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm28": {
+            "parents": [
+                "Concat25"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm29": {
+            "parents": [
+                "Concat26"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm3": {
+            "parents": [
+                "Concat2"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm30": {
+            "parents": [
+                "Concat27"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm31": {
+            "parents": [
+                "Concat28"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm32": {
+            "parents": [
+                "Concat29"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm33": {
+            "parents": [
+                "Concat30"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm34": {
+            "parents": [
+                "Concat31"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm35": {
+            "parents": [
+                "Concat32"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm36": {
+            "parents": [
+                "Concat33"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm37": {
+            "parents": [
+                "Concat34"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm38": {
+            "parents": [
+                "Concat35"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm39": {
+            "parents": [
+                "Concat36"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm4": {
+            "parents": [
+                "Concat3"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm5": {
+            "parents": [
+                "Concat4"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm6": {
+            "parents": [
+                "Concat5"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm7": {
+            "parents": [
+                "Concat6"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm8": {
+            "parents": [
+                "Concat7"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "BatchNorm9": {
+            "parents": [
+                "Concat8"
+            ], 
+            "type": "BatchNorm"
+        }, 
+        "Concat1": {
+            "dim": 3, 
+            "parents": [
+                "Convolution1", 
+                "Dropout1"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat10": {
+            "dim": 3, 
+            "parents": [
+                "Concat9", 
+                "Dropout10"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat11": {
+            "dim": 3, 
+            "parents": [
+                "Concat10", 
+                "Dropout11"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat12": {
+            "dim": 3, 
+            "parents": [
+                "Concat11", 
+                "Dropout12"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat13": {
+            "dim": 3, 
+            "parents": [
+                "Pooling1", 
+                "Dropout14"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat14": {
+            "dim": 3, 
+            "parents": [
+                "Concat13", 
+                "Dropout15"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat15": {
+            "dim": 3, 
+            "parents": [
+                "Concat14", 
+                "Dropout16"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat16": {
+            "dim": 3, 
+            "parents": [
+                "Concat15", 
+                "Dropout17"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat17": {
+            "dim": 3, 
+            "parents": [
+                "Concat16", 
+                "Dropout18"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat18": {
+            "dim": 3, 
+            "parents": [
+                "Concat17", 
+                "Dropout19"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat19": {
+            "dim": 3, 
+            "parents": [
+                "Concat18", 
+                "Dropout20"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat2": {
+            "dim": 3, 
+            "parents": [
+                "Concat1", 
+                "Dropout2"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat20": {
+            "dim": 3, 
+            "parents": [
+                "Concat19", 
+                "Dropout21"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat21": {
+            "dim": 3, 
+            "parents": [
+                "Concat20", 
+                "Dropout22"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat22": {
+            "dim": 3, 
+            "parents": [
+                "Concat21", 
+                "Dropout23"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat23": {
+            "dim": 3, 
+            "parents": [
+                "Concat22", 
+                "Dropout24"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat24": {
+            "dim": 3, 
+            "parents": [
+                "Concat23", 
+                "Dropout25"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat25": {
+            "dim": 3, 
+            "parents": [
+                "Pooling2", 
+                "Dropout27"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat26": {
+            "dim": 3, 
+            "parents": [
+                "Concat25", 
+                "Dropout28"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat27": {
+            "dim": 3, 
+            "parents": [
+                "Concat26", 
+                "Dropout29"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat28": {
+            "dim": 3, 
+            "parents": [
+                "Concat27", 
+                "Dropout30"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat29": {
+            "dim": 3, 
+            "parents": [
+                "Concat28", 
+                "Dropout31"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat3": {
+            "dim": 3, 
+            "parents": [
+                "Concat2", 
+                "Dropout3"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat30": {
+            "dim": 3, 
+            "parents": [
+                "Concat29", 
+                "Dropout32"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat31": {
+            "dim": 3, 
+            "parents": [
+                "Concat30", 
+                "Dropout33"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat32": {
+            "dim": 3, 
+            "parents": [
+                "Concat31", 
+                "Dropout34"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat33": {
+            "dim": 3, 
+            "parents": [
+                "Concat32", 
+                "Dropout35"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat34": {
+            "dim": 3, 
+            "parents": [
+                "Concat33", 
+                "Dropout36"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat35": {
+            "dim": 3, 
+            "parents": [
+                "Concat34", 
+                "Dropout37"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat36": {
+            "dim": 3, 
+            "parents": [
+                "Concat35", 
+                "Dropout38"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat4": {
+            "dim": 3, 
+            "parents": [
+                "Concat3", 
+                "Dropout4"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat5": {
+            "dim": 3, 
+            "parents": [
+                "Concat4", 
+                "Dropout5"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat6": {
+            "dim": 3, 
+            "parents": [
+                "Concat5", 
+                "Dropout6"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat7": {
+            "dim": 3, 
+            "parents": [
+                "Concat6", 
+                "Dropout7"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat8": {
+            "dim": 3, 
+            "parents": [
+                "Concat7", 
+                "Dropout8"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Concat9": {
+            "dim": 3, 
+            "parents": [
+                "Concat8", 
+                "Dropout9"
+            ], 
+            "type": "Concatenate"
+        }, 
+        "Convolution1": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                16
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "data"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution10": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm9"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution11": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm10"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution12": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm11"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution13": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm12"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution14": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                160
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "BatchNorm13"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution15": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm14"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution16": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm15"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution17": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm16"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution18": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm17"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution19": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm18"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution2": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm1"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution20": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm19"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution21": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm20"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution22": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm21"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution23": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm22"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution24": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm23"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution25": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm24"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution26": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm25"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution27": {
+            "filter": [
+                1, 
+                1, 
+                -1, 
+                304
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "BatchNorm26"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution28": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm27"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution29": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm28"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution3": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm2"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution30": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm29"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution31": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm30"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution32": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm31"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution33": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm32"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution34": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm33"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution35": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm34"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution36": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm35"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution37": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm36"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution38": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm37"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution39": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm38"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution4": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm3"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution5": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm4"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution6": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm5"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution7": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm6"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution8": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm7"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Convolution9": {
+            "filter": [
+                3, 
+                3, 
+                -1, 
+                12
+            ], 
+            "padding": "SAME", 
+            "parents": [
+                "BatchNorm8"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Convolution"
+        }, 
+        "Dropout1": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution2"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout10": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution11"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout11": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution12"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout12": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution13"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout13": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution14"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout14": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution15"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout15": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution16"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout16": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution17"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout17": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution18"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout18": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution19"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout19": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution20"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout2": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution3"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout20": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution21"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout21": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution22"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout22": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution23"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout23": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution24"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout24": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution25"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout25": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution26"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout26": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution27"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout27": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution28"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout28": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution29"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout29": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution30"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout3": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution4"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout30": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution31"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout31": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution32"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout32": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution33"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout33": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution34"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout34": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution35"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout35": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution36"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout36": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution37"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout37": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution38"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout38": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution39"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout4": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution5"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout5": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution6"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout6": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution7"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout7": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution8"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout8": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution9"
+            ], 
+            "type": "Dropout"
+        }, 
+        "Dropout9": {
+            "dropout_keep_prob": 0.2, 
+            "parents": [
+                "Convolution10"
+            ], 
+            "type": "Dropout"
+        },
+        "reshape1": {
+            "output_shape": [-1, -1],
+            "parents": [ "Pooling3"],
+            "type": "Reshape"
+        },
+        "InnerProduct1": {
+            "num_outputs": 10,
+            "parents": [
+                "reshape1"
+            ],
+            "type": "InnerProduct"
+        },
+        "Pooling1": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "Dropout13"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "Pooling2": {
+            "ksize": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "Dropout26"
+            ], 
+            "strides": [
+                1, 
+                2, 
+                2, 
+                1
+            ], 
+            "type": "Pooling"
+        }, 
+        "Pooling3": {
+            "ksize": [
+                1, 
+                3, 
+                3, 
+                1
+            ], 
+            "padding": "VALID", 
+            "parents": [
+                "BatchNorm39"
+            ], 
+            "strides": [
+                1, 
+                1, 
+                1, 
+                1
+            ], 
+            "type": "Pooling"
+        },
+        "SoftmaxWithLoss1": {
+            "parents": [
+                "InnerProduct1"
+            ], 
+            "type": "Softmax"
+        },
+        "data": {
+            "parents": [], 
+            "tensor": [
+                10,
+                32, 
+                32, 
+                3
+            ], 
+            "type": "Input"
+        }
+    }, 
+    "name": "Dense"
+}

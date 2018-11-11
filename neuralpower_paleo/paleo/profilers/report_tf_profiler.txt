@@ -1,0 +1,49 @@
+--------------------------------------------------------------------------------
+Processing file 'tensorflow_profiler_0.9.py'
+ outputting to 'tensorflow_profiler.py'
+--------------------------------------------------------------------------------
+
+'tensorflow_profiler_0.9.py' Line 298
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.initialize_all_variables' to 'tf.global_variables_initializer'
+
+    Old:                 init = tf.initialize_all_variables()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+    New:                 init = tf.global_variables_initializer()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+
+'tensorflow_profiler_0.9.py' Line 228
+--------------------------------------------------------------------------------
+
+Added keyword 'concat_dim' to reordered function 'tf.concat'
+Added keyword 'values' to reordered function 'tf.concat'
+
+    Old:                 concat = tf.concat(layer.dim, inputs)
+                                                               
+    New:                 concat = tf.concat(axis=layer.dim, values=inputs)
+                                            ~~~~~           ~~~~~~~        
+
+'tensorflow_profiler_0.9.py' Line 245
+--------------------------------------------------------------------------------
+
+Added keyword 'logits' to reordered function 'tf.nn.sparse_softmax_cross_entropy_with_logits'
+Added keyword 'labels' to reordered function 'tf.nn.sparse_softmax_cross_entropy_with_logits'
+
+    Old:                         tf.squeeze(inputs), self._get_fake_targets(
+                                                                             
+    New:                         logits=tf.squeeze(inputs), labels=self._get_fake_targets(
+                                 ~~~~~~~                    ~~~~~~~                        
+
+'tensorflow_profiler_0.9.py' Line 254
+--------------------------------------------------------------------------------
+
+Added keyword 'logits' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+Added keyword 'labels' to reordered function 'tf.nn.sigmoid_cross_entropy_with_logits'
+
+    Old:                     tf.nn.sigmoid_cross_entropy_with_logits(inputs, tf.zeros(
+                                                                                       
+    New:                     tf.nn.sigmoid_cross_entropy_with_logits(logits=inputs, labels=tf.zeros(
+                                                                     ~~~~~~~        ~~~~~~~          
+
+
