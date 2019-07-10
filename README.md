@@ -23,7 +23,7 @@ In this work, we mainly use polynomial models to learn the layer level power and
 ## Model testing
 With the trained model, we can use it directly in the runtime, power predictions. The file *predict_runtime_power.py* provide such functionality for this process.
 
-# Referecen Paper
+# Reference Paper
 E Cai, DC Juan, D Stamoulis, D Marculescu. [NeuralPower: Predict and Deploy Energy-Efficient Convolutional Neural Networks](https://arxiv.org/pdf/1710.05420.pdf). In *Asian Conference on Machine Learning* 2017 Nov 11 (pp. 622-637).
 ```
 @article{cai2017neuralpower,
